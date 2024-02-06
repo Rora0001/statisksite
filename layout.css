@@ -1,0 +1,44 @@
+.grid_kategori {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 3px;
+  align-items: center;
+}
+
+.kategori {
+  background-color: rgb(174, 174, 194);
+  margin: 0.5rem;
+  text-align: center;
+  padding: 8rem;
+}
+
+.grid_produkt {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid_produkt {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/*
+.produktliste {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 3px;
+  align-items: center;
+}
+
+.produkt {
+  margin: 5px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.produktliste img {
+  width: 100%;
+}
+*/

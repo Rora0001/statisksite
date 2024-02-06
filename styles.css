@@ -1,0 +1,304 @@
+body {
+  background-color: rgb(242, 242, 242);
+}
+
+img {
+  width: 100%;
+}
+
+.logo {
+  font-size: 30px;
+  padding-left: 15px;
+}
+
+.logo a {
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    z-index: 1;
+    background-color: #fff; /* Ændr baggrundsfarven efter behov */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Tilføj en skygge for at fremhæve menuen */
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+  }
+
+  .menu.active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    flex-direction: column;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
+
+  .menu a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .burger {
+    cursor: pointer;
+    flex-direction: column;
+    padding-right: 15px;
+  }
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+  }
+
+  /* Aktiv tilstandsstilarter */
+  .burger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .burger.active .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+header {
+  display: flex;
+  text-align: left;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: end;
+  width: 100vw;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu li a:hover {
+  font-weight: bold;
+}
+
+.menu a {
+  margin-left: auto;
+}
+
+.menu a {
+  display: flex;
+  padding: 20px;
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 17px;
+  align-items: center;
+  font-family: "Lato", sans-serif;
+}
+
+footer {
+  text-align: center;
+  font-size: 20px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.udsolgt {
+  position: relative;
+}
+
+.tekst_udsolgt {
+  position: absolute;
+  background-color: rgb(174, 174, 194);
+  top: 2rem;
+  left: 1rem;
+  color: black;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+.sale {
+  position: relative;
+}
+
+.tekst_sale {
+  position: absolute;
+  background-color: rgb(174, 174, 194);
+  top: 2rem;
+  left: 1rem;
+  color: black;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+h2 {
+  color: black;
+  font-size: 19px;
+}
+
+p {
+  color: black;
+}
+
+h1 {
+  text-align: center;
+  font-size: 19px;
+  padding-bottom: 1rem;
+  font-weight: 100;
+}
+
+.pris {
+  font-weight: bold;
+}
+
+.navn_produkt {
+  font-size: 20px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.beskrivelse {
+  margin-top: 1rem;
+  margin-top: 1rem;
+}
+
+.beskrivelse2 {
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 19px;
+    padding-bottom: 1rem;
+    font-weight: 100;
+  }
+
+  .button {
+    margin-left: 4rem;
+  }
+
+  .pris {
+    margin-left: 4rem;
+    font-weight: bold;
+    padding-top: 1rem;
+  }
+
+  .navn_produkt {
+    padding-left: 4rem;
+  }
+
+  .beskrivelse {
+    margin-left: 4rem;
+    align-items: center;
+  }
+
+  .beskrivelse2 {
+    margin-top: 5rem;
+    margin-left: 4rem;
+    align-items: center;
+  }
+
+  button {
+    cursor: pointer;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 200px;
+    margin-left: 4rem;
+    margin-top: 2rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.tekst_kategori {
+  font-size: 25px;
+  color: black;
+}
+
+button {
+  font-size: 16px;
+  cursor: pointer;
+  color: black;
+  border: 2px solid black;
+  margin-top: 2rem;
+  padding: 10px 130px;
+}
+
+button:hover {
+  background-color: rgb(174, 174, 194);
+}
+
+.tekst {
+  margin-left: 1rem;
+}
+
+.productlist_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1rem;
+}
+
+.productlist_article {
+  background-color: rgb(174, 174, 194);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.productlist_image_container {
+  background-color: rgb(242, 242, 242);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.productlist_image {
+  max-width: 100%;
+}
+
+.productlist_name {
+  margin-bottom: 0.5rem;
+  font-size: 17px;
+}
+
+.productlist_price {
+  margin-top: 0.5rem;
+}
