@@ -1,20 +1,19 @@
-const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get("id");
-const url = `https://kea-alt-del.dk/t7/products//${id}`;
+const urlp = new URLSearchParams(window.location.search);
+const id = urlp.get("id"); // i første omgang prøver vi med et fast ID - senere bliver det også dynamisk
+const url = `https://kea-alt-del.dk/t7/api/products/${id}`;
 
 function getProduct() {
-  fetch("url")
-    .then((response) => response.json())
-    .then(showProduct);
+  fetch(url)
+    .then((res) => res.json())
+    .then(visProdukt);
 }
 
-function showProduct(product) {
-  console.log(product);
-  document.querySelector(".purchaseBox h3").textContent = product.productdisplayname;
-  document.querySelector(".purchaseBox p").textContent = product.productname;
-  document.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`;
-  document.querySelector("img").alt = product.productdisplayname;
-  document.querySelector("a").href = product.html?${product.id};
+function visProdukt(produkt) {
+  console.log(produkt);
+  document.querySelector(".purchaseBox h3").textContent = produkt.productdisplayname;
+  document.querySelector("img").src = `https://kea-alt-del.dk/t7/images/webp/640/${id}.webp`;
+  document.querySelector("img").alt = produkt.productdisplayname;
+  // etc. med de øvrige data
 }
 
 getProduct();
